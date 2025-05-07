@@ -1,0 +1,8 @@
+<resources>
+
+    <dimen name="default_dim">16dp</dimen>
+    <dimen name="extra_small_dim">4dp</dimen>
+    <dimen name="small_dim">8dp</dimen>
+    <dimen name="long_dim">24dp</dimen>
+    <dimen name="extra_long_dim">32dp</dimen>
+</resources>

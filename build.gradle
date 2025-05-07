@@ -1,0 +1,9 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.4.1' apply false    //Version anterior era 7.2.1, cuyo targetSdk era 32. Pero muchas librerias necesitan +33, por lo que se actualizó el gradle
+    id 'com.android.library' version '7.4.1' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

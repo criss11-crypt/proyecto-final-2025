@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/default_dim"
+    android:animateLayoutChanges="true"
+    tools:context=".RegistroFragment">
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scrollbars="none"
+        >
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group"
+            android:layout_width="wrap_content"
+            app:selectionRequired="true"
+            app:singleSelection="true"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_atras"
+                android:layout_width="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_dim"
+                android:text="Más atrás"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_anteayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Anteayer"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_ayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Ayer"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_hoy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:checked="true"
+                android:text="Hoy"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_maniana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Mañana"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_pasado_maniana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Pasado mañana"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_mas_adelante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_marginEnd="@dimen/default_dim"
+                android:text="Más adelante"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/icon_alarm"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/default_dim"
+        android:layout_marginStart="@dimen/default_dim"
+        android:src="@drawable/icon_alarm"/>
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"
+        app:layout_constraintStart_toEndOf="@id/icon_alarm"
+        android:layout_marginTop="@dimen/default_dim"
+        android:textColor="?attr/colorOnBackground"
+        android:layout_marginStart="@dimen/small_dim"
+        android:text="Registro del día"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        />
+
+    <TextView
+        android:id="@+id/subtitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toEndOf="@id/icon_alarm"
+        android:layout_marginStart="@dimen/small_dim"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:text="Medicamentos a consumir"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/icon_alarm"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/default_dim"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/default_dim"
+        android:layout_marginStart="@dimen/default_dim"
+        android:layout_marginEnd="@dimen/default_dim"
+        android:layout_marginBottom="@dimen/small_dim"
+        android:paddingBottom="@dimen/small_dim"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintBottom_toTopOf="@id/necesidad_button"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_vacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/long_dim"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_cat"/>
+
+        <TextView
+            android:id="@+id/vacioText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sr. Gato no encontró ningún registro"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnBackground"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/necesidad_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/default_dim"
+        app:icon="@drawable/icon_add"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:text="En necesidad"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

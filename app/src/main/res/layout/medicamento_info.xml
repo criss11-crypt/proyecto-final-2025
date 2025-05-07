@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MedicamentoInfoFragment"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/medicamento_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/icon_medicamento"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/icon_pending_checked"
+            android:layout_margin="@dimen/small_dim"
+            android:layout_width="match_parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Medicatrack.cornedShape"
+            android:background="?attr/colorSurfaceVariant"
+            android:layout_height="200dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/small_dim"
+            android:layout_marginEnd="@dimen/small_dim"
+            android:layout_marginBottom="@dimen/small_dim"
+            android:backgroundTint="?attr/colorSurface"
+            android:elevation="@dimen/small_dim"
+            app:cardCornerRadius="@dimen/small_dim">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/nameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_dim"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:text="Ibuprofeno"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceHeadline4" />
+
+                    <com.google.android.material.button.MaterialButton
+                    android:id="@+id/editarButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:layout_marginEnd="@dimen/default_dim"
+                    android:text="Editar"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/deleteButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/editarButton"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:layout_marginEnd="@dimen/default_dim"
+                    android:backgroundTint="?attr/colorError"
+                    style="?attr/materialIconButtonFilledStyle"
+                    app:icon="@drawable/icon_delete"
+                    />
+
+                <TextView
+                    android:id="@+id/descripcionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/nameText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_dim"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:text="Descripción"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                <TextView
+                    android:id="@+id/descripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/descripcionTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_dim"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:textColor="?attr/colorOnSurface"
+                    android:text="Este medicamento se utiliza para tratar los dolores\nde cabeza y derivados"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_dim"
+                    android:layout_marginEnd="@dimen/default_dim"
+                    app:layout_constraintTop_toBottomOf="@id/descripcion"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/default_dim"/>
+
+                <ImageView
+                    android:id="@+id/icon_caracteristicas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_dim"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:src="@drawable/icon_medication"/>
+
+                <TextView
+                    android:id="@+id/caracteristicasTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    app:layout_constraintStart_toEndOf="@id/icon_caracteristicas"
+                    android:layout_marginStart="@dimen/small_dim"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:text="Características"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBody1" />
+
+                <TextView
+                    android:id="@+id/concentracionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/caracteristicasTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_dim"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:text="Concentración"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                <TextView
+                    android:id="@+id/formaTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/caracteristicasTitle"
+                    app:layout_constraintStart_toStartOf="@id/ultimoTitle"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:text="Forma"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                <TextView
+                    android:id="@+id/colorTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/caracteristicasTitle"
+                    app:layout_constraintStart_toStartOf="@id/proximoTitle"
+                    android:layout_marginEnd="@dimen/long_dim"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:text="Color"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                <TextView
+                    android:id="@+id/concentracionValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/concentracionTitle"
+                    app:layout_constraintStart_toStartOf="@id/concentracionTitle"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:text="600 mg"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <TextView
+                    android:id="@+id/formaValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/formaTitle"
+                    app:layout_constraintStart_toStartOf="@id/formaTitle"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:text="Cápsula"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <TextView
+                    android:id="@+id/colorValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/colorTitle"
+                    app:layout_constraintStart_toStartOf="@id/colorTitle"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:text="Rojo"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <ImageView
+                    android:id="@+id/icon_consumo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/concentracionValor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_dim"
+                    android:layout_marginTop="@dimen/long_dim"
+                    android:src="@drawable/icon_date"/>
+
+                <TextView
+                    android:id="@+id/consumoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/concentracionValor"
+                    app:layout_constraintStart_toEndOf="@id/icon_consumo"
+                    android:layout_marginTop="@dimen/long_dim"
+                    android:layout_marginStart="@dimen/small_dim"
+                    android:text="Calendario"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBody1" />
+
+
+                <TextView
+                    android:id="@+id/frecuenciaTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/icon_consumo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:layout_marginStart="@dimen/default_dim"
+                    android:text="Frecuencia"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+
+                <TextView
+                    android:id="@+id/ultimoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/icon_consumo"
+                    app:layout_constraintStart_toEndOf="@id/frecuenciaTitle"
+                    app:layout_constraintEnd_toStartOf="@id/proximoTitle"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:text="Último"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                <TextView
+                    android:id="@+id/proximoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/icon_consumo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/long_dim"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:text="Próximo"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                <TextView
+                    android:id="@+id/frecuenciaValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/frecuenciaTitle"
+                    app:layout_constraintStart_toStartOf="@id/frecuenciaTitle"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:text="Intervalo regular"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <TextView
+                    android:id="@+id/ultimoValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/ultimoTitle"
+                    app:layout_constraintStart_toStartOf="@id/ultimoTitle"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:text="Hace 3 días"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <TextView
+                    android:id="@+id/proximoValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/proximoTitle"
+                    app:layout_constraintStart_toStartOf="@id/proximoTitle"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:text="Cada día"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+
+                <TextView
+                    android:id="@+id/horaTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/ultimoValor"
+                    app:layout_constraintStart_toStartOf="@id/ultimoTitle"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:text="Hora"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+
+                <TextView
+                    android:id="@+id/horaValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/horaTitle"
+                    app:layout_constraintStart_toStartOf="@id/horaTitle"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:text="10:30 AM"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <TextView
+                    android:id="@+id/comienzoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/frecuenciaValor"
+                    app:layout_constraintStart_toStartOf="@id/frecuenciaTitle"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:text="Comienzo"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+
+                <TextView
+                    android:id="@+id/comienzoValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/comienzoTitle"
+                    app:layout_constraintStart_toStartOf="@id/comienzoTitle"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:text="10:30 AM"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+
+                <TextView
+                    android:id="@+id/totalTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/horaValor"
+                    android:layout_marginTop="@dimen/default_dim"
+                    android:text="Total"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                <TextView
+                    android:id="@+id/totalValor"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/totalTitle"
+                    app:layout_constraintStart_toStartOf="@id/totalTitle"
+                    app:layout_constraintEnd_toEndOf="@id/totalTitle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="@dimen/small_dim"
+                    android:layout_marginEnd="@dimen/default_dim"
+                    android:layout_marginStart="@dimen/default_dim"
+                    android:layout_marginBottom="@dimen/default_dim"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textColor="?attr/colorOnTertiaryContainer"
+                    android:background="?attr/colorTertiaryContainer"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

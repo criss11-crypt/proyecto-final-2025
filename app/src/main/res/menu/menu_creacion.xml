@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.medicatrack.creacion.CreacionActivity">
+    <item
+        android:id="@+id/action_cancelar"
+        android:orderInCategory="1"
+        android:title="@string/cancelar"
+        android:icon="@drawable/baseline_close_24"
+        app:showAsAction="always" />
+</menu>

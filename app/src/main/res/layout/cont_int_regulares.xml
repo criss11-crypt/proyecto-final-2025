@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/contenedor">
+
+    <TextView
+        android:id="@+id/txtIntervalo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/intervalo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/cada"
+        android:textSize="16sp"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintBottom_toBottomOf="@+id/textFieldIntervalo"
+        app:layout_constraintEnd_toStartOf="@id/textFieldIntervalo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textFieldIntervalo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldIntervalo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="95dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txtCada"
+        app:layout_constraintTop_toBottomOf="@id/txtIntervalo">
+
+        <AutoCompleteTextView
+            android:id="@+id/dropFrecuencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:text="1 día"
+            android:textAlignment="center"
+            android:textColor="?attr/colorOnSurface"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <include
+        android:id="@+id/cont_fecha_hora2"
+        layout="@layout/fecha_hora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textFieldIntervalo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

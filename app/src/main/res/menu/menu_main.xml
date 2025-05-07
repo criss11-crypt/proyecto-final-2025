@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.medicatrack.MainActivity">
+
+    <item
+        android:id="@+id/action_map"
+        android:orderInCategory="1"
+        android:title="@string/action_map"
+        android:icon="@drawable/icon_map"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        android:icon="@drawable/icon_settings"
+        app:showAsAction="always" />
+</menu>

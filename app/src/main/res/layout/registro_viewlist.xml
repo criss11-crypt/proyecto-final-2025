@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_constraintTop_toBottomOf="@id/divider"
+    app:layout_constraintStart_toStartOf="parent"
+    android:background="?attr/colorSurface"
+    android:layout_width="match_parent"
+    android:animateLayoutChanges="true"
+    android:layout_marginBottom="@dimen/default_dim"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tiempo_TextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        android:textColor="?attr/colorOnSurface"
+        android:text="12:30 AM"
+        android:gravity="center"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/icon_pendiente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tiempo_TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/small_dim"
+        android:src="@drawable/icon_pending_checked"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/icon_no_tomado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tiempo_TextView"
+        app:layout_constraintEnd_toStartOf="@id/icon_pendiente"
+        android:layout_marginEnd="@dimen/small_dim"
+        android:layout_marginTop="@dimen/small_dim"
+        android:src="@drawable/icon_close_unchecked"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/icon_tomado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tiempo_TextView"
+        app:layout_constraintEnd_toStartOf="@id/icon_no_tomado"
+        android:layout_marginEnd="@dimen/small_dim"
+        android:layout_marginTop="@dimen/small_dim"
+        android:src="@drawable/icon_check_unchecked"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_medicamento"
+        app:layout_constraintTop_toBottomOf="@id/tiempo_TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/icon_pending_checked"
+        android:layout_marginTop="@dimen/small_dim"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/nombre_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tiempo_TextView"
+        app:layout_constraintStart_toEndOf="@id/icon_medicamento"
+        android:layout_marginTop="@dimen/small_dim"
+        android:layout_marginStart="@dimen/small_dim"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        android:textColor="?attr/colorOnSurface"
+        android:text="Ibuprofeno"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dosis_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_dim"
+        android:text="Consumir 1 unidad de 600mg"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintStart_toEndOf="@id/icon_medicamento"
+        app:layout_constraintTop_toBottomOf="@id/nombre_textView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/estado_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/dosis_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:text="No tomado"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/estado_textView"
+        app:layout_constraintEnd_toEndOf="@id/estado_textView"
+        android:layout_marginTop="@dimen/small_dim"
+        android:src="@drawable/icon_arrow_down"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/small_dim"
+        app:layout_constraintTop_toBottomOf="@id/arrow"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_margin="@dimen/small_dim">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tomar_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tomar"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/no_tomar_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_dim"
+            android:text="No tomar"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

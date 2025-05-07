@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_creacion"
+    app:startDestination="@id/datosMedicamentoFragment">
+
+    <fragment
+        android:id="@+id/datosMedicamentoFragment"
+        android:name="com.example.medicatrack.creacion.DatosMedicamentoFragment"
+        android:label="@string/medicamento"
+        tools:layout="@layout/fragment_datos_medicamento" >
+        <action
+            android:id="@+id/action_datosMedicamentoFragment_to_frecuenciaMedicamentoFragment"
+            app:destination="@id/frecuenciaMedicamentoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/frecuenciaMedicamentoFragment"
+        android:name="com.example.medicatrack.creacion.FrecuenciaMedicamentoFragment"
+        android:label="@string/medicamento"
+        tools:layout="@layout/fragment_frecuencia_medicamento" />
+</navigation>
